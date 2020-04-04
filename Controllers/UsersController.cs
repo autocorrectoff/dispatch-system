@@ -16,7 +16,7 @@ namespace dispatch_system.Controllers
         [Route("{id}")]
         public IActionResult GetUserById(int id)
         {
-            var user = new Dictionary<String, string>();
+            var user = new Dictionary<string, string>();
             user.Add(id.ToString(), "hardcoded response");
             return Ok(user);
         }
