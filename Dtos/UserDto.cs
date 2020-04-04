@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dispatch_system.Core.Models
+namespace dispatch_system.Dtos
 {
-    public class User
+    public class UserDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using dispatch_system.Persistence;
 
 namespace dispatch_system.Migrations
 {
     [DbContext(typeof(DispatchSystemDbContext))]
-    partial class DispatchSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200404155831_UpdateUserTbl")]
+    partial class UpdateUserTbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
