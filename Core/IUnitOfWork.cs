@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace dispatch_system.Core
 {
-    interface IUnitOfWork: IDisposable
+    public interface IUnitOfWork: IDisposable
     {
         IUserRepository Users { get; }
         int Complete();
