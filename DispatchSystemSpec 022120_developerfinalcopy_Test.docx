@@ -1,0 +1,154 @@
+﻿
+Users
+
+Name
+Email (username)
+Password
+Phone
+State (optional)
+Active/Inactive
+Date added
+Notes
+
+User Types
+
+Technicians (limited to their state and what is assigned to them, only see active dispatches)
+Dispatchers (limited to their state and can see all technicians and all dispatches in their state, can add dispatches))
+HQ Users (can see all technicians and dispatches for all states, can add dispatches)
+Admin Users (can do everything as well as add/edit/delete users, can delete dispatches)
+
+Customers
+
+Company Name
+Customer Number (automatically assigned)
+Active/Inactive
+Address 1
+Address 2
+City
+State
+Zip
+Phone type, Phone Number
+Phone type, Phone Number
+Phone type, Phone Number
+Date Added
+Locations
+Locations Notes
+Equipment
+Labor Rate (not displayed to technicians) – hourly rate
+Trip Rate (not displayed to technicians – hourly rate
+OT Rate (not displayed to technicians) – hourly rate
+Holiday Rate (not displayed to technicians) – hourly rate
+Customer Markup (not displayed to technicians) - %
+
+Locations
+
+Location Name
+Location Number (automatically assigned)
+Address 1
+Address 2
+City
+State
+Zip
+IVR/Check In Information
+EMS Number
+Contact names (each has Name, Email, Phone, Title, one marked as Primary)
+Active Y/N
+Information for PM (paragraph box field)
+
+
+Equipment
+
+Manufacturer (drop down)
+Model
+Type (drop down)
+Equipment ID
+Serial Number
+Equipment Location (drop down)
+Notes
+Documents (uploaded file, picture, can upload multiple at one time, types to be restricted, some can be marked Confidential and they won’t be displayed to technicians)
+
+Dispatch
+
+Customer
+Location (drop down selected from customer locations)
+Service Request Codes (up to 4)
+Priority (drop down, color causes box to turn that color)
+Trade (drop down, color causes box to turn that color or split color if two selected)
+Received By – logged automatically based on who entered dispatch
+Work Order Number (text field)
+Date Received – logged automatically based on when it was entered
+Time Received – logged automatically based on when it was entered
+Technician (selected from list)
+Follow Up Date (date picker)
+Status (Pending, Traveling, Working, DispatchRvw) (date/time stamp when status changes)
+Equipment (selected or added)
+Documents (uploaded file, picture, can upload multiple at one time, types to be restricted, some can be marked Confidential and they won’t be displayed to technicians – When documents are uploaded they can be uploaded to the specific location or a specific piece of equipment by the technician and when looking at documents for the location documents for the equipment at that location will also show and note that they are tagged to specific equipment)
+History Section (will show each dispatch either by date or by location and then date, filter by drop down boxes, can show dispatches based on equipment as well)
+Items Used (entered by technician, paragraph box, Name, Description, Price on each one) or selected and added from the Parts list (with customer markup included in the price tech sees)
+
+Dispatch Board
+
+Each board consists of a name and is assigned to a state (all locations being serviced in that state go to that dispatch board for that state, each state can only have one dispatch board, a dispatch board can not be assigned to a state.  Each dispatch board has a list of dispatchers that can access that dispatch board)
+Each board can have any number of custom columns and any number of vertical sections
+Dispatches can be moved from one column, row to another by dragging or they can be moved by selecting drop down items and they can be moved to another board based on selecting that options and then pick which board, column/row it gets moved to.  Movement within the dispatch system will be logged for this dispatch.
+
+Admin can edit lists of:
+
+Manufacturer (text field)
+Equipment Type (text field)
+Equipment Location (text field)
+Priority (text field wit color)
+Trade (text field wit color)
+Dispatch Type (text field)
+Service Request codes (text with a numerical value)
+Parts List (Part Number, Name, Manufacturer, Source, Description, Price)
+
+All notes boxes will keep a history of all notes and display all notes.  Users can see previous notes or add new notes by Entering text.  The system will have Date/Time Stamp with Username that will be automatically recorded with each Note entered.  Spell check feature also included with each Notes box.
+
+Tech functions –
+
+Tech sees list of Current Dispatches
+Tech can see location details (including IVR check in information) and equipment details and can add equipment
+The tech first clicks CHECK IN before they can do anything on that particular dispatch.
+When tech arrives onsite to start entering information on the dispatch, they must first answer up to 5 set Yes/No questions that must all be answered correctly before they can move on.
+Clicking on a dispatch, tech can add notes
+Tech can change status of a dispatch ticket
+Tech must collect signature which gets logged when each dispatch is completed.  When signature is entered, the name of the person is also entered by Tech at that time.  Each dispatch can have any number of signatures that get date/time stamped and user stamped when entered.
+Tech can upload pictures/documents to that particular dispatch (which is assigned that to that particular location)
+Documents uploaded to the dispatch will be included on the invoice ticket document.
+The tech clicks CLOCK OUT when finished with this particular dispatch.  The system then asks final questions.  The system will log the CLOCK IN and CLOCK OUT and compile all the time for this particular dispatch and display it to the Dispatcher, HQ, and Admin users.  The date/time in’s and out’s will be logged and the totals for each and the total for all can be displayed in the dispatch.
+Before the dispatch is completed by the tech (which is signified by the tech changing the status of the dispatch), the system will ask up to 5 Yes/No questions that must be answered correctly before the tech can close out the dispatch.
+
+A dispatch is completed by the tech when they mark it as DispatchRvw.  A HQ User is the only one who can actually mark the Dispatch as Completed as far as a status.
+
+Tech App – 
+
+iPhone and Android apps will be developed to allow techs to log in to see their dispatch tickets and download all the information for those tickets (including customers, location, and all materials associated with that dispatch ticket in addition to the standard lists like parts lists, etc.) so that the ticket can be viewed offline.  The app will allow the tech to complete the items they need to complete onsite such as entering notes, uploading documents and pictures, and other relevant information like the parts used and the associated signatures.  If there is no connection on the tech’s device, the information will be stored locally and will sync up as soon as the system gets connected again with an internet connection.
+
+Invoicing – 
+
+The system will have an invoicing section accessible to HQ and Admin Users.  Dispatchers have the ability to mark a Dispatch as COMPLETE.  This allows that dispatch to show up on the invoice list.  Clicking on a dispatch allows the user to see everything in that dispatch and edit anything accordingly.  There will be an invoice button on the dispatch that will display a standard invoice with everything being editable.  The original invoice is “saved” in the system but also the edited invoice is saved.  The Quantity, Description, Unit Price, and Extended Price can all be edited.  Lines can be removed or custom lines can be added.  The system will calculate the Labor based on a standard Labor rate times number of hours between all the check in’s and check out’s for this ticket along with the list of parts used in this dispatch along with a trip rate (if entered).  The invoice will have blank lines for Labor Tax and Materials Tax as well that can be entered when an invoice number is entered.  After the edits are done, the invoice can be saved.  Invoices can be exported as Invoices that will be imported into Quickbooks. The customer numbers will be matched up and the invoice generated in Quickbooks.  Quickbooks will assign an invoice number that will be manually entered into the system and a PDF will be generated containing the invoice, the dispatch report including tech notes and pictures/documents all in one PDF file.
+
+Invoices can be exported as QB import files individually or multiple invoices.  Invoice numbers can be entered individually or as multiple and saved as a group.  Invoices can only be edited individually.  Invoice PDF’s can be generated individually or as a group (with each dispatch/invoice being generated in one file).
+
+System Functionality – 
+
+The system will allow users to be entered by Admin and boards to be setup by Admin.
+
+Dispatches are then manually entered into the system and tracked through the dispatch board.  Each dispatch can be dragged to the place on the board or changed to a place on a board via a drop down.
+Dispatches can be searched by Customer, Location, Date Range.
+Techs will have a launcher app to access the system from a mobile device.  The system will be web based and will be entirely responsive and adaptive so it works on mobile devices.
+
+Location search can be done by State, by zip code search, or by customer search.
+
+There will be a section of the system for Dispatchers, HQ, and Admin called Follow up dates.  This will list all Dispatches and their follow up dates present and future.  User can update follow up date and add note to dispatch or mark follow up date as completed and it will remove follow up date so the dispatch will no longer appear on the follow up report.
+
+All notes sections that have been entered can only be edited by Dispatchers, HQ, and Admin users.  If any one single note block is edited, the original note block is saved in the system and is viewable ONLY to HQ and Admin users.  Otherwise the amended or edited block is what appears for other users of that particular notes section.
+
+General system notes – 
+
+The system will be a hosted web based system built on ASP.net and SQL Server.  The system will be entirely standards based.
+
+Current data may be migrated to the new system.  This depends on what database formats are available in the current ESC system.  No data migration is included in this proposal.
+
+Initial base features will be developed to replace ESC.  The application will be built as described here and no functionality not listed here is included.  Future features will be rolled out and added one at a time while the system is in use.

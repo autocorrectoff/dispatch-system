@@ -8,6 +8,8 @@ using dispatch_system.Dtos;
 using dispatch_system.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
+using Microsoft.Extensions.Primitives;
 
 namespace dispatch_system.Controllers
 {
@@ -34,6 +36,19 @@ namespace dispatch_system.Controllers
         [HttpPost("create")]
         public IActionResult Create(UserDto dto)
         {
+            // TODO: use jwt auth
+            StringValues id = string.Empty;
+            Request.Headers.TryGetValue("user_id", out id);
+            if(string.IsNullOrEmpty(id.ToString()))
+            {
+                return Unauthorized("Unauthorized access blocked. Please log in as admin");
+            }
+            User loggedInUser = _uow.Users.GetUser(int.Parse(id.ToString()));
+            if(loggedInUser.UserType.ToLower() != "admin")
+            {
+                return Unauthorized("Unauthorized access blocked. Please log in as admin");
+            }
+            // TODO: consider using automapper
             var user = new User { Name = dto.Name, Email = dto.Email, Password = HasherUtil.Hash(dto.Password), Phone = dto.Phone, State = dto.State, IsActive = dto.IsActive, DateAdded = DateTime.Now, Notes = dto.Notes, UserType = dto.UserType };
             _uow.Users.AddUser(user);
             _uow.Complete();
